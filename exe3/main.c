@@ -1,7 +1,7 @@
 #include "hardware/gpio.h"
 #include "pico/stdlib.h"
 #include <stdio.h>
-//aa
+
 const int botao_vermelho = 28;
 const int botao_verde = 26;
 
@@ -25,7 +25,7 @@ int main() {
   gpio_pull_up(botao_verde);
 
   gpio_init(led_verde);
-  gpio_set_dir(led_verde, GPIO_IN);
+  gpio_set_dir(led_verde, GPIO_OUT);
 
 
   while (true) {
@@ -41,7 +41,7 @@ int main() {
     if(!gpio_get(botao_verde)){
 
       gpio_put(led_verde,1);
-      sleep_ms(250)
+      sleep_ms(250);
 
       gpio_put(led_verde,0);
       while (!gpio_get(botao_vermelho)) {
