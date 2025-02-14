@@ -54,7 +54,7 @@ int main() {
       gpio_put(led_amarelo,0);
 
       while (!gpio_get(botao)) {
-      };
+      }
 
 
 
